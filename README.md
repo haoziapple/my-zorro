@@ -25,3 +25,25 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Angular CLI 常用命令
+```
+ng generate class my-new-class              // 新建 class
+ng generate component my-new-component      // 新建组件
+ng generate directive my-new-directive      // 新建指令
+ng generate enum my-new-enum                // 新建枚举
+ng generate module my-new-module            // 新建模块
+ng generate pipe my-new-pipe                // 新建管道
+ng generate service my-new-service          // 新建服务
+```
+简写：
+```
+ng g cl my-new-class        // 新建 class
+ng g c my-new-component     // 新建组件
+ng g d my-new-directive     // 新建指令
+ng g e my-new-enum          // 新建枚举
+ng g m my-new-module        // 新建模块
+ng g p my-new-pipe          // 新建管道
+ng g s my-new-service       // 新建服务
+```
