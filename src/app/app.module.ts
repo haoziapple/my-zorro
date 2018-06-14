@@ -9,6 +9,7 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { FirstcomComponent } from './firstcom/firstcom.component';
+import {HttpModule} from '@angular/http';
 
 registerLocaleData(zh);
 
@@ -22,7 +23,8 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    HttpModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [FirstcomComponent]
