@@ -30,13 +30,16 @@ export class FirstcomComponent implements OnInit {
     this.http.get(`https://api.github.com/orgs/angular/members?page=1&per_page=5`)
       .map(res => res.json())
       .subscribe(data => {
-        if (data) this.members = data;
+        if (data) {
+          console.log(data);
+          this.members = data;
+        }
       });
 
   }
 
   addSkill(skill: string) {
-    let skillStr = skill.trim();
+    const skillStr = skill.trim();
     if (this.skills.indexOf(skillStr) === -1) {
       this.skills.push(skillStr);
     }
