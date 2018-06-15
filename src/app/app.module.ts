@@ -1,3 +1,4 @@
+import { MailService } from './service/mail.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -38,7 +39,7 @@ export const ROUTES: Routes = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }, MailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
