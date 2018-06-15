@@ -9,7 +9,7 @@ interface Member {
 }
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-first',
   templateUrl: './firstcom.component.html',
   styleUrls: ['./firstcom.component.css']
 })

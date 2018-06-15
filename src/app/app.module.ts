@@ -9,14 +9,22 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { FirstcomComponent } from './firstcom/firstcom.component';
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
+import { NgLogoComponent } from './ng-logo/ng-logo.component';
 
 registerLocaleData(zh);
+export const ROUTES: Routes = [
+  { path: 'app', component: AppComponent },
+  { path: 'firstcom', component: FirstcomComponent },
+  { path: 'nglogo', component: NgLogoComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstcomComponent
+    FirstcomComponent,
+    NgLogoComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +32,10 @@ registerLocaleData(zh);
     FormsModule,
     HttpClientModule,
     NgZorroAntdModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
-  bootstrap: [FirstcomComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
