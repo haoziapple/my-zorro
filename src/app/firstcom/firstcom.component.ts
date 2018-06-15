@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 interface Member {
   id: string;
@@ -18,8 +18,9 @@ export class FirstcomComponent implements OnInit {
   skills: string[];
   showSkills: boolean;
   members: Member[];
+  members$: Observable<Member[]>;
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     this.showSkills = true;
     this.skills = ['AngularJS 1.x', 'Angular 2.x', 'Angular 4.x'];
     console.log('construct first component!');
@@ -27,12 +28,12 @@ export class FirstcomComponent implements OnInit {
 
   ngOnInit() {
     console.log('call ngOnInit!');
-    this.http.get(`https://api.github.com/orgs/angular/members?page=1&per_page=5`)
-      .map(res => res.json())
+    this.members$ = this.http
+      .get<Member[]>(`https://api.github.com/orgs/angular/members?page=1&per_page=5`)
       .subscribe(data => {
         if (data) {
-          console.log(data);
           this.members = data;
+          console.log(data);
         }
       });
 
