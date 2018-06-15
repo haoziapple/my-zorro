@@ -12,19 +12,22 @@ import { FirstcomComponent } from './firstcom/firstcom.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgLogoComponent } from './ng-logo/ng-logo.component';
+import { SimpleFormComponent } from './simple-form/simple-form.component';
 
 registerLocaleData(zh);
 export const ROUTES: Routes = [
   { path: 'app', component: AppComponent },
   { path: 'firstcom', component: FirstcomComponent },
-  { path: 'nglogo', component: NgLogoComponent }
+  { path: 'nglogo', component: NgLogoComponent },
+  { path: 'simple-form', component: SimpleFormComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstcomComponent,
-    NgLogoComponent
+    NgLogoComponent,
+    SimpleFormComponent
   ],
   imports: [
     BrowserModule,
