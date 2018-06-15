@@ -1,5 +1,5 @@
 import { MailService } from './service/mail.service';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private mailService: MailService) {
+  constructor(private mailService: MailService, @Inject('apiUrl') private url) {
 
   }
 }

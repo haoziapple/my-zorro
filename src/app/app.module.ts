@@ -39,7 +39,10 @@ export const ROUTES: Routes = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }, MailService],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN },
+    MailService,
+    {provide: 'apiUrl', useValue: 'https://jsonplaceholder.typicode.com/'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
